@@ -1,0 +1,133 @@
+{% extends "base.html" %}
+{% block content_well %}
+    <td class="pd" valign="top" width="100%">
+        <table cellspacing="0" cellpadding="0" width="100%" class="table">
+            <tbody>
+            <tr>
+                <td bgcolor="#FFFFFF">
+                    <table cellspacing="3" cellpadding="0" width="100%" border="0">
+                        <tbody>
+                        <tr>
+                            <td valign="top" align="middle" bgcolor="#e8e8e8">
+                                <table cellspacing="0" cellpadding="10" border="0">
+                                    <tbody>
+
+                                    <tr>
+                                        <td>
+                                            <table height="100%" cellspacing="0" cellpadding="10" width="100%"
+                                                   align="left" border="0">
+
+                                                <tbody>
+                                                <tr>
+                                                    <td class="style3">
+
+
+                                                        <div style="padding-left:35;padding-top:3; text-align: center;"
+                                                        #bf0000"="" class="tah11"><h3><font color="#bf0000">Заполните,
+                                                        пожалуйста,
+                                                        форму заказа <br> и в ближайшее время мы свяжемся с Вами</font>
+                                                    </h3></div>
+
+                                                        <hr>
+                                                        <form method="POST" action="/products/order_insert">
+                                                            {% csrf_token %}
+                                                            <p align="left"><font size="2">Поля, отмеченные <font
+                                                                    color="#FF0000">(*)</font>, обязательны для
+                                                                заполнения.</font>
+                                                                <br><br>
+                                                            <table width="682">
+                                                                <tbody>
+                                                                <tr>
+                                                                    <td align="right" width="284">
+                                                                        <p align="left"><font size="2">Фамилия, Имя,
+                                                                            Отчество<font color="#FF0000">*</font>
+                                                                        </font></p></td>
+                                                                    <td>
+                                                                        <input name="fio" size="35" class="input-xlarge" value="{{ fio }}"></td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td align="right" width="284">
+                                                                        <p align="left"><font size="2">Ваш <span
+                                                                                lang="en-us">E-mail<font
+                                                                                color="#FF0000">*</font></span></font>
+                                                                        </p></td>
+                                                                    <td>
+                                                                        <input name="email" size="35"
+                                                                               maxlength="25" value="{{ email }}">
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td align="right" width="284">
+                                                                        <p align="left"><font size="2">Телефон<font
+                                                                                color="#FF0000">*</font></font></p>
+                                                                    </td>
+                                                                    <td>
+                                                                        <input name="telephone" size="35"
+                                                                               maxlength="22" value="{{ telephone }}">
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td align="right" width="284">
+                                                                        <p align="left"><font size="2">Адрес
+                                                                            доставки<font
+                                                                                    color="#FF0000">*</font></font>
+                                                                        </p>
+                                                                    </td>
+                                                                    <td>
+                                                                        <input name="address" class="input-xlarge" value="{{ address }}" id="adress" size="35">
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td align="right" width="284">
+                                                                        <p align="left"><font size="2">Форма
+                                                                            оплаты<font
+                                                                                    color="#FF0000">*</font></font>
+                                                                        </p></td>
+                                                                    <td>
+                                                                        <select size="1" name="form_pay">
+                                                                            <option value="1">Наличными курьеру</option>
+                                                                            <option value="2">Яндекс деньгами</option>
+                                                                            <option value="3">Наложенным платежом
+                                                                            </option>
+                                                                        </select>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td align="right" width="284">
+                                                                        <p align="left"><font size="2">Заказанная
+                                                                            продукция<font
+                                                                                    color="#FF0000">*</font></font>
+                                                                        </p>
+                                                                    </td>
+                                                                    <td><textarea rows="6" name="products"
+                                                                                  cols="45" ></textarea></td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td align="right" width="284"></td>
+                                                                    <td></td>
+                                                                </tr>
+                                                                </tbody>
+                                                            </table>
+                                                            <input type="SUBMIT" class="btn btn-success" value="Сгенерировать форму заказа">
+                                                            <input type="RESET" class="btn btn-danger offset6" value="Сброс">
+                                                        </form>
+                                                    </td>
+                                                </tr>
+                                                </tbody>
+                                            </table>
+
+
+                                        </td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </td>
+{% endblock %}

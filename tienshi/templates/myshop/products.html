@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% block content_well %}
+{% load shop_tags %}
+    <table class="table">
+        <thead>
+        <tr>
+            <th>#</th>
+            <th>Вид</th>
+            <th>Название</th>
+            <th>Цена</th>
+            <th>Описание</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% products object_list %}
+        {% for bads in object_list %}
+            <tr>
+                <td>{{ bads.id }}</td><!-- 
+                <td><img src="{{ STATIC_URL }}{{ bads.image_path }}" class="span2" alt="Бады"></td> -->
+                <td>{{ bads.title }}</td>
+                <td>{{ bads.cover_picture }}</td>
+                <!-- <td>{{ bads.coast }}</td> -->
+                <td>{{ bads.description }}</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

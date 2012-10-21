@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% block script_addon %}
+    <script type="text/javascript" src="{{ STATIC_URL }}js/mp-tms-0.4.1.js" ></script>
+{% endblock %}
+
+{% block content %}
+    <section id="content" class="offset1">
+        <div class="mp-slider">
+            <ul class="mp-items">
+                <li style="display: none; ">
+                    <img src="{{ STATIC_URL }}img/base/multy_saver.gif"  alt="">
+                </li>
+                <li style="display: none; ">
+                    <img src="{{ STATIC_URL }}img/base/tree.jpg"  alt="">
+                    <div class="mp-banner" style="color: #DE0202">
+                        <br>
+                        <strong>БАД</strong>
+                        <span>БАДы корпорации “Тяньши”</span>
+                        <a href="http://livedemo00.template-help.com/wt_40504/more.html" class="slider-button">Подробнее</a>
+                    </div>
+                </li>
+                <li style="display: none; ">
+                    <img src="{{ STATIC_URL }}img/base/happy.jpg"  alt="">
+                    <div class="mp-banner" style="color: #23B000;">
+                        <strong>Мы поможем</strong>
+                        <span>  восстановить  сохранить <br> преумножить <br> Ваше здоровье</span>
+                        <a href="http://livedemo00.template-help.com/wt_40504/more.html" class="slider-button">Подробнее</a>
+                    </div>
+                </li>
+            </ul>
+            <div class="pic" ></div>
+
+        </div>
+    </section>
+{% endblock %}

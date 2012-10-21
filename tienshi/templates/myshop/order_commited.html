@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% block content_well %}
+    <table class="table">
+        <tbody>
+        <tr>
+            <td>Спасибо за заказ продукции Тяньши</td>
+            <td>{{ fio }}</td>
+        </tr>
+        <tr>
+            <td>В скором времени мы вам позвоним на ваш номер:</td>
+            <td>{{ telephone }}</td>
+        </tr>
+        <tr>
+            <td>Список продуктов:</td>
+            <td>{{ products }}</td>
+        </tr>
+        </tbody>
+    </table>
+    <div class="span4">
+        <p style="color: #002a80; font-size: 20px;">Если данные не совпадают, то вы можете исправить: вернувшись обратно на форму заказа</p>
+    <form class="span2">
+        <button type="button" class="btn btn-inverse" onclick="javascript:history.back();">
+            Исправить
+        </button>
+    </form>
+    </div>
+
+    <a href="/products/order_insert" class="btn btn-success offset4">Принять</a>
+    <!--<a href="/products/order_form" class="btn btn-inverse">Исправить</a>-->
+{% endblock %}
