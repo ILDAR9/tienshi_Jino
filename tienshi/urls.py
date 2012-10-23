@@ -12,6 +12,7 @@ admin.autodiscover()
 urlpatterns = patterns('',
     url(r'^$', direct_to_template, {'template': 'home.html'}),
     # url(r'^products/',include('shop.urls')),
+    url(r'^test$',direct_to_template, {'template':'test.html'}),
     url(r'^404/', direct_to_template, {'template': '404.html'}),
     url(r'^shop/', include(shop_urls)),
     url(r'^base$', direct_to_template, {'template': 'base.html'}),
