@@ -1,101 +1,96 @@
 {% extends "base.html" %}
 
 {% block style_addon %}
-<link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}/js/ParallaxContentSlider/ParallaxContentSlider/css/style.css" />
-        {% endblock %}
+    <link rel="stylesheet" type="text/css"
+          href="{{ STATIC_URL }}js/ParallaxContentSlider/ParallaxContentSlider/css/style.css"/>
+{% endblock %}
 {% block script_addon %}
-<!--<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>-->
-<script type="text/javascript" src="{{ STATIC_URL }}/js/ParallaxContentSlider/ParallaxContentSlider/js/modernizr.custom.28468.js"></script>
-<script type="text/javascript" src="{{ STATIC_URL }}/js/ParallaxContentSlider/ParallaxContentSlider/js/jquery.cslider.js"></script>
-<script type="text/javascript">
-    $(function() {
+    <!--<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>-->
+    <script type="text/javascript"
+            src="{{ STATIC_URL }}js/ParallaxContentSlider/ParallaxContentSlider/js/modernizr.custom.28468.js"></script>
+    <script type="text/javascript"
+            src="{{ STATIC_URL }}js/ParallaxContentSlider/ParallaxContentSlider/js/jquery.cslider.js"></script>
+    <script type="text/javascript">
+        $(function () {
 
-        $('#da-slider').cslider({
-            autoplay	: true,
-            bgincrement	: 450
+            $('#da-slider').cslider({
+                autoplay:true,
+                bgincrement:450
+            });
+
         });
-
-    });
-</script>
+    </script>
 {% endblock %}
 {% block content %}
 
-<div class="">
-
     <div id="da-slider" class="da-slider">
         <div class="da-slide">
-            <h2>Warm welcome</h2>
+            <h2>Tianshi on-line</h2>
 
-            <p>When she reached the first hills of the Italic Mountains, she had a last view back on the skyline of her
-                hometown Bookmarksgrove, the headline of Alphabet Village and the subline of her own road, the Line
-                Lane.</p>
-            <a href="#" class="da-link">Read more</a>
+            <p>On-Line Интернет магазин <br> мы вам очень рады</p>
+            <a href="/shop/products" class="da-link">Продукция</a>
 
-            <div class="da-img"><img src="{{ STATIC_URL }}/js/ParallaxContentSlider/ParallaxContentSlider/images/1.png" alt="image01"/></div>
+            <div class="da-img"><img src="{{ STATIC_URL }}js/ParallaxContentSlider/ParallaxContentSlider/images/1.png"
+                                     alt="image01"/></div>
         </div>
         <div class="da-slide">
-            <h2>Easy management</h2>
+            <h2>БАДЫ</h2>
 
-            <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the
-                blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language
-                ocean.</p>
-            <a href="#" class="da-link">Read more</a>
+            <p style="color: #ff4500;">БАДы корпорации “Тяньши”<br>Прекрасная замена аптечной химии!</p>
 
-            <div class="da-img"><img src="{{ STATIC_URL }}/js/ParallaxContentSlider/ParallaxContentSlider/images/2.png" alt="image01"/></div>
+            <a href="/why" class="da-link">Подробнее</a>
+
+            <div class="da-img"><img src="{{ STATIC_URL }}img/base/multy_saver1.jpg" alt="image01"/></div>
         </div>
         <div class="da-slide">
-            <h2>Revolution</h2>
+            <h2>Эволюция</h2>
 
-            <p>A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a
-                paradisematic country, in which roasted parts of sentences fly into your mouth.</p>
-            <a href="#" class="da-link">Read more</a>
+            <p style="color: #00ba08;">Сильный, быстрый, безопасный, ну просто замечательный препарат, без побочных эффектов.</p>
+            <a href="#" class="da-link">Подробнее</a>
 
-            <div class="da-img"><img src="{{ STATIC_URL }}/js/ParallaxContentSlider/ParallaxContentSlider/images/3.png" alt="image01"/></div>
+            <div class="da-img"><img src="{{ STATIC_URL }}img/base/wow.png" alt="image01"/></div>
         </div>
         <div class="da-slide">
-            <h2>Quality Control</h2>
+            <h2>Очень просто</h2>
 
-            <p>Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life
-                One day however a small line of blind text by the name of Lorem Ipsum decided to leave for the far World
-                of Grammar.</p>
-            <a href="#" class="da-link">Read more</a>
+            <p style="color: red;">Пищевая добавка, возвращающая к жизни!.</p>
+            <a href="#" class="da-link">Перейти</a>
 
-            <div class="da-img"><img src="{{ STATIC_URL }}/js/ParallaxContentSlider/ParallaxContentSlider/images/4.png" alt="image01"/></div>
+            <div class="da-img"><img src="{{ STATIC_URL }}img/base/happy.jpg" alt="image01"/></div>
         </div>
         <!--<nav class="da-arrows">-->
-            <!--<span class="da-arrows-prev"></span>-->
-            <!--<span class="da-arrows-next"></span>-->
+        <!--<span class="da-arrows-prev"></span>-->
+        <!--<span class="da-arrows-next"></span>-->
         <!--</nav>-->
     </div>
-</div>
-<!--<section id="content">-->
-<!--<div class="mp-slider">-->
-<!--<ul class="mp-items" >-->
-<!--<li style="display: none; ">-->
-<!--<img src="{{ STATIC_URL }}img/base/multy_saver.gif"  alt="">-->
-<!--</li>-->
-<!--<li style="display: none; ">-->
-<!--<img src="{{ STATIC_URL }}img/base/tree.jpg"  alt="tree">-->
-<!--<div class="mp-banner" style="color: #DE0202;">-->
-<!--<strong >БАД</strong>-->
-<!--<span>БАДы корпорации “Тяньши”</span>-->
-<!--<a href="http://livedemo00.template-help.com/wt_40504/more.html" class="slider-button">Подробнее</a>-->
-<!--</div>-->
-<!--</li>-->
-<!--<li style="display: none; ">-->
-<!--<img src="{{ STATIC_URL }}img/base/happy.jpg"  alt="happy">-->
-<!--<div class="mp-banner" style="color: #23B000;">-->
-<!--<strong>Мы поможем</strong>-->
-<!--<span>  восстановить  сохранить <br> преумножить <br> Ваше здоровье</span>-->
-<!--<a href="http://livedemo00.template-help.com/wt_40504/more.html" class="slider-button">Подробнее</a>-->
-<!--</div>-->
-<!--</li>-->
-<!--</ul>-->
-<!--<div class="pic">-->
-<!--<div class="mp-banner"></div>-->
-<!--</div>-->
+    <!--<section id="content">-->
+    <!--<div class="mp-slider">-->
+    <!--<ul class="mp-items" >-->
+    <!--<li style="display: none; ">-->
+    <!--<img src="{{ STATIC_URL }}img/base/multy_saver.gif"  alt="">-->
+    <!--</li>-->
+    <!--<li style="display: none; ">-->
+    <!--<img src="{{ STATIC_URL }}img/base/tree.jpg"  alt="tree">-->
+    <!--<div class="mp-banner" style="color: #DE0202;">-->
+    <!--<strong >БАД</strong>-->
+    <!--<span>БАДы корпорации “Тяньши”</span>-->
+    <!--<a href="http://livedemo00.template-help.com/wt_40504/more.html" class="slider-button">Подробнее</a>-->
+    <!--</div>-->
+    <!--</li>-->
+    <!--<li style="display: none; ">-->
+    <!--<img src="{{ STATIC_URL }}img/base/happy.jpg"  alt="happy">-->
+    <!--<div class="mp-banner" style="color: #23B000;">-->
+    <!--<strong>Мы поможем</strong>-->
+    <!--<span>  восстановить  сохранить <br> преумножить <br> Ваше здоровье</span>-->
+    <!--<a href="http://livedemo00.template-help.com/wt_40504/more.html" class="slider-button">Подробнее</a>-->
+    <!--</div>-->
+    <!--</li>-->
+    <!--</ul>-->
+    <!--<div class="pic">-->
+    <!--<div class="mp-banner"></div>-->
+    <!--</div>-->
 
 
-<!--</div>-->
-<!--</section>-->
+    <!--</div>-->
+    <!--</section>-->
 {% endblock %}

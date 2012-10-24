@@ -1,0 +1,8 @@
+{% extends "cms/base.html" %}
+{% load cms_tags sekizai_tags %}
+
+{% block base_content %}
+    {% render_block "css" %}
+  {% placeholder template_1_content %}
+    {% render_block "js" %}
+{% endblock %}

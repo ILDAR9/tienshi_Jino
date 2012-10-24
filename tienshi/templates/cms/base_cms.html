@@ -1,0 +1,15 @@
+
+{% load cms_tags sekizai_tags %}
+{% block title %}
+    {{ request.current_page.get_title }}
+{% endblock %}
+{% block style_addon %}
+    {% render_block "css" %}
+{% endblock %}
+
+{% block content %}    
+    {% placeholder main %}
+{% endblock %}
+{% block script_addon %}
+    {% render_block "js" %}
+{% endblock %}

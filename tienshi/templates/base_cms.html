@@ -35,9 +35,7 @@
 <![endif]-->
 </head>
 <body >
-<!--=====================================
-                Top Fixed Navigation Menu BEGIN
-        ======================================-->
+{% cms_toolbar %}
 <div id="menu_div span10">
     <div id="navigation">
         <div id="menu">
@@ -47,23 +45,28 @@
 
 
                     <div class="bg_pro " style='position: fixed;'>
-                        <div class="pro_main"><img style="height: 30px; float: left;" src="{{ STATIC_URL }}img/base/tianshi_word.jpg"
+                        <div class="pro_main"><img style="height: 30px; float: left;"
+                                                   src="{{ STATIC_URL }}img/base/tianshi_word.jpg"
                                                    alt="TIENS">
                             <ul class="pro_menu sf-js-enabled">
 
 
                                 <li><a href="/"><img src="{{ STATIC_URL }}img/Home_files/pro_home.png" alt=""></a>
                                 </li>
-                                <li><a href="http://livedemo00.template-help.com/wt_40504/404.html">Pages<span></span></a>
+                                <li>
+                                    <a href="http://livedemo00.template-help.com/wt_40504/404.html">Pages<span></span></a>
                                     <ul style="display: none; ">
-                                        <li><a href="http://livedemo00.template-help.com/wt_40504/under_construction.html">Under
-                                            Construction</a></li>
-                                        <li><a href="http://livedemo00.template-help.com/wt_40504/intro.html">Intro Page</a></li>
-                                        <li><a href="http://livedemo00.template-help.com/wt_40504/404.html">404 page</a></li>
+                                        <li>
+                                            <a href="http://livedemo00.template-help.com/wt_40504/under_construction.html">Under
+                                                Construction</a></li>
+                                        <li><a href="http://livedemo00.template-help.com/wt_40504/intro.html">Intro
+                                            Page</a></li>
+                                        <li><a href="http://livedemo00.template-help.com/wt_40504/404.html">404 page</a>
+                                        </li>
                                     </ul>
                                 </li>
-                                <li><a href="/products/bads">Продукция</a></li>
-                                <li><a href="/products/order_form">Сделать заказ</a></li>
+                                <li><a href="/shop/products">Продукция</a></li>
+                                <li><a href="/shop/cart">Сделать заказ</a></li>
                                 <li><a data-toggle="modal" href="#myModal">Контактные данные</a></li>
 
                             </ul>
@@ -84,53 +87,26 @@
         /Top Fixed Navigation Menu END
 ======================================-->
 
-<!--<div id="advanced" style="margin-top: 0px; ">-->
-
-
-    <!--<div class="bg_pro" style='position: fixed;'>-->
-        <!--<div class="pro_main"><img style="height: 30px; float: left;" src="{{ STATIC_URL }}img/base/tianshi_word.jpg"-->
-                                   <!--alt="TIENS">-->
-            <!--<ul class="pro_menu sf-js-enabled">-->
-                <!--<li><a href="/"><img src="{{ STATIC_URL }}img/Home_files/pro_home.png" alt=""></a>-->
-                <!--</li>-->
-                <!--<li><a href="http://livedemo00.template-help.com/wt_40504/404.html">Pages<span></span></a>-->
-                    <!--<ul style="display: none; ">-->
-                        <!--<li><a href="http://livedemo00.template-help.com/wt_40504/under_construction.html">Under-->
-                            <!--Construction</a></li>-->
-                        <!--<li><a href="http://livedemo00.template-help.com/wt_40504/intro.html">Intro Page</a></li>-->
-                        <!--<li><a href="http://livedemo00.template-help.com/wt_40504/404.html">404 page</a></li>-->
-                    <!--</ul>-->
-                <!--</li>-->
-                <!--<li><a href="/shop/products">Продукция</a></li>-->
-                <!--<li><a href="/products/order_form">Сделать заказ</a></li>-->
-                <!--<li><a data-toggle="modal"  href="#myModal">Контактные данные</a></li>-->
-
-            <!--</ul>-->
-            <!--<div class="pro_clear"></div>-->
-        <!--</div>-->
-    <!--</div>-->
-
-<!--</div>-->
-<!--<div class="main">-->
 <div class="container ">
-    <!-- Header -->
-    <header style="margin-top: 60px;">
-        <div class="inner" style="height:50px">
-            <a href="/"><img class="logo" src="{{ STATIC_URL }}img/base/tianshi_logo.gif"  alt="Tiens"></a>
-            <nav>
-                <ul class="sf-menu sf-js-enabled">
-                    <li class="current"><a href="{{ STATIC_URL }}img/Home_files/Home.htm">home</a></li>
-                    <li><a href="/why">Почему Тяньши</a></li>
-                    <li><a href="http://livedemo00.template-help.com/wt_40504/index-3.html">clients</a></li>
-                    <li><a data-toggle="modal" href="#myModal">Контактные данные</a></li>
-                </ul>
-            </nav>
-            <div class="clear"></div>
-        </div>
-    </header>
+    <div class="header" style="margin-top: 60px;">
+        <!-- Header -->
+        <header>
+            <div class="inner span12" style="height:50px">
+                <a href="/"><img class="logo" src="{{ STATIC_URL }}img/base/tianshi_logo.gif" alt="Tiens"></a>
+                <nav>
+                    <ul class="sf-menu sf-js-enabled">
+                        <li class="current"><a href="{{ STATIC_URL }}img/Home_files/Home.htm">home</a></li>
+                        <li><a href="/why">Почему Тяньши</a></li>
+                        <li><a href="/vopros-otvet">Вопросы-ответы</a></li>
+                        <li><a data-toggle="modal" href="#myModal">Контактные данные</a></li>
+                    </ul>
+                </nav>
+                <div class="clear"></div>
+            </div>
+        </header>
     <!-- Content -->
-    <div class="well" >
-        {% cms_toolbar %}
+    <div class="well-small">
+
         {% placeholder "main" %}
     </div>
 
@@ -145,12 +121,12 @@
         <div class="row-fluid">
             <article class="offset1 span3" style="float: left;">
                 <h4>Для тех кто хочет <br>зарабатывать</h4>
-                © 2012 | <a href="http://bestwork.com//">Сюда</a>
+                © 2012 | <a href="http://bestwork.com//" style="color: #006dcc;">Сюда</a>
             </article>
 
             <article class="span3">
                 <h4>Для тех кто думает как приумножить деньги</h4>
-                © 2012 | <a href="http://bestinvestments.com/">Сюда</a>
+                © 2012 | <a href="http://bestinvestments.com/" style="color: #006dcc;">Сюда</a>
             </article>
 
             <article class=" span3" style="margin-right: 40px;">
@@ -172,7 +148,7 @@
 </div>
 <!-- Contacts -->
 <div id="myModal" class="modal hide fade span12"
-     style="background-image: url("{{ STATIC_URL }}img/base/contact_bk.jpg"); color: #ffffff;">
+     style="z-index: 2000; background-image: url('{{ STATIC_URL }}img/base/contact_bk.jpg');">
 <div class="modal-header">
     <button type="button" class="close" data-dismiss="modal">×</button>
     <h3>Контактные данные</h3>

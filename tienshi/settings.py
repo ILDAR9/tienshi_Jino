@@ -10,7 +10,7 @@ TEMPLATE_DEBUG = DEBUG
 
 ADMINS = (
     ('ildar', 'nurildar9@gmail.com'),
-)
+    )
 
 MANAGERS = ADMINS
 
@@ -21,11 +21,11 @@ DEFAULT_CHARSET = 'utf8'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql', # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
-        'NAME': 'bl3000_tienshi',                      # Or path to database file if using sqlite3.
-        'USER': 'bl3000',                      # Not used with sqlite3.
-        'PASSWORD': 'P@$$wordBarsik9',                  # Not used with sqlite3.
-        'HOST': '127.0.0.1',                      # Set to empty string for localhost. Not used with sqlite3.
-        'PORT': '',                      # Set to empty string for default. Not used with sqlite3.
+        'NAME': 'bl3000_tienshi', # Or path to database file if using sqlite3.
+        'USER': 'bl3000', # Not used with sqlite3.
+        'PASSWORD': 'P@$$wordBarsik9', # Not used with sqlite3.
+        'HOST': '127.0.0.1', # Set to empty string for localhost. Not used with sqlite3.
+        'PORT': '', # Set to empty string for default. Not used with sqlite3.
     }
 }
 
@@ -54,9 +54,10 @@ USE_L10N = True
 
 # Absolute filesystem path to the directory that will hold user-uploaded files.
 # Example: "/home/media/media.lawrence.com/"
-MEDIA_ROOT = os.path.join(PROJECT_DIR, 'files','media')
+MEDIA_ROOT = os.path.join(PROJECT_DIR, 'files', 'media')
 
-STATIC_ROOT = os.path.join(PROJECT_DIR,'files',"static")#os.path.join(os.path.expanduser('~'), 'domains/tienshi.bl3000.myjino.ru/static/')#os.path.join(PROJECT_DIR, 'static')
+STATIC_ROOT = os.path.join(PROJECT_DIR, 'files',
+    "static")#os.path.join(os.path.expanduser('~'), 'domains/tienshi.bl3000.myjino.ru/static/')#os.path.join(PROJECT_DIR, 'static')
 
 # URL that handles the media served from MEDIA_ROOT. Make sure to use a
 # trailing slash if there is a path component (optional in other cases).
@@ -66,7 +67,7 @@ MEDIA_URL = '/media/'
 STATIC_URL = '/static/'
 
 STATICFILES_DIRS = (
-  os.path.join(PROJECT_DIR,'files',"static"),
+    os.path.join(PROJECT_DIR, 'files', "static"),
     )
 
 # URL prefix for admin media -- CSS, JavaScript and images. Make sure to use a
@@ -81,7 +82,7 @@ SECRET_KEY = '0r6%7gip5tmez*vygfv+u14h@4lbt^8e2^26o#5_f_#b7%cm)u'
 TEMPLATE_LOADERS = (
     'django.template.loaders.filesystem.Loader',
     'django.template.loaders.app_directories.Loader',
-)
+    )
 
 MIDDLEWARE_CLASSES = (
     'django.middleware.common.CommonMiddleware',
@@ -92,7 +93,7 @@ MIDDLEWARE_CLASSES = (
     'cms.middleware.page.CurrentPageMiddleware',
     'cms.middleware.user.CurrentUserMiddleware',
     'cms.middleware.toolbar.ToolbarMiddleware',
-)
+    )
 
 TEMPLATE_CONTEXT_PROCESSORS = (
     'django.contrib.auth.context_processors.auth',
@@ -102,18 +103,18 @@ TEMPLATE_CONTEXT_PROCESSORS = (
     'django.core.context_processors.static',
     'cms.context_processors.media',
     'sekizai.context_processors.sekizai',
-)
+    )
 
 CMS_TEMPLATES = (
-    ('example.html', 'Example Template'),
-    ('base_cms.html','base_well'),
-)
+    #    ('example.html', 'Example Template'),
+    ('base_cms.html', 'base_cms'),
+    )
 
 ROOT_URLCONF = 'tienshi.urls'
 
 TEMPLATE_DIRS = (
     os.path.join(PROJECT_DIR, 'templates'),
-)
+    )
 
 INSTALLED_APPS = (
     'django.contrib.auth',
@@ -133,13 +134,14 @@ INSTALLED_APPS = (
     'cms.plugins.link',
     'cms.plugins.file',
     'cms.plugins.snippet',
-    'cms.plugins.googlemap',
+    #    'cms.plugins.googlemap',
+    'cms.plugins.video',
     'sekizai',
     #shop
     'shop', # The django SHOP application
     'shop.addressmodel', # The default Address and country models
     'myshop',
-)
+    )
 CMS_USE_TINYMCE = False
 
 EMAIL_HOST = 'smtp.gmail.com'

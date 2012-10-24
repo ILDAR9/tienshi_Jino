@@ -1,0 +1,16 @@
+{% with cart.get_updated_cart_items as cart_items %}
+    {% if cart_items %}
+        <link rel="stylesheet" href="{{ STATIC_URL }}css/bootstrap.css">
+        <div class="span2"><img src="{{ STATIC_URL }}img/Home_files/basket.jpg" alt="basket"></div>
+        <div class="span2">
+            <h2>Cart</h2>
+
+            <p>
+                {% for item in cart_items %}
+                    {{ item.product.get_name }} x {{ item.quantity }}<br/>
+                {% endfor %}
+                <a href="{% url cart %}">Total: {{ cart.subtotal_price }},-</a>
+            </p>
+        </div>
+    {% endif %}
+{% endwith %}
