@@ -1,0 +1,4 @@
+Регистрация на сайте
+Для активации вашего аккаунта необходимо перейти по ссылке:
+http://tienshi.bl3000.myjino.ru/accounts/activate/{{ activation_key }}/
+Спасибо!

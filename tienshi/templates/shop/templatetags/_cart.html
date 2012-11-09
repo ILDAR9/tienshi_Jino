@@ -1,16 +1,48 @@
 {% with cart.get_updated_cart_items as cart_items %}
     {% if cart_items %}
-        <link rel="stylesheet" href="{{ STATIC_URL }}css/bootstrap.css">
-        <div class="span2"><img src="{{ STATIC_URL }}img/Home_files/basket.jpg" alt="basket"></div>
-        <div class="span2">
-            <h2>Cart</h2>
 
-            <p>
-                {% for item in cart_items %}
-                    {{ item.product.get_name }} x {{ item.quantity }}<br/>
-                {% endfor %}
-                <a href="{% url cart %}">Total: {{ cart.subtotal_price }},-</a>
-            </p>
+        {% for item in cart_items %}
+            <div class="row-fluid ">
+                <div class="span2">
+                    <div class="image_container">
+
+
+                        <a href="/shop/products/{{ item.product.slug }}"><img class="thumbnail"
+                                                                              src="/media/{{ item.product.cover_picture }}"
+                                                                              alt="The Virgin's Lover"></a>
+
+
+                    </div>
+                </div>
+                <div class="span6">
+                    <h4 style="margin-left: 8px;"><a
+                            href="/shop/products/{{ item.product.slug }}">{{ item.product.get_name }}</a>
+                    </h4>
+                </div>
+
+                <div class="span1 align-center"><strong>Кол-во</strong> {{ item.quantity }}</div>
+                <div class="price_bask_color">{{ item.product.get_price }}</div>
+
+            </div>
+        {% endfor %}
+
+        <a href=""></a>
+
+        <div class="form-actions">
+            <h4>
+                <span class="total_bask_color">Сумма: {{ cart.subtotal_price }}</span></h4>
+
+            <p class="pull-left"><a href="{% url cart %}"
+                                    class="btn btn-info btn-small">Показать корзину</a></p>
+
+            <p class="pull-right"><a href="{% url checkout_selection %}"
+                                     class="btn btn-primary btn-small"><i
+                    class="icon-shopping-cart"></i> Оплатить</a></p>
         </div>
+    {% else %}
+        <p>
+        <p>Корзина пуста</p>
+        <br>
+        <p><a href="/shop/products/" class="btn btn-primary">Вернуться в каталог</a></p>
     {% endif %}
 {% endwith %}

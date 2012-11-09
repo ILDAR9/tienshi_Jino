@@ -21,13 +21,17 @@
         });
     </script>
 {% endblock %}
+{% block btn_group %}
+    <li><a href="/shop/cart/"><img src="{{ STATIC_URL }}img/base/basket_white.png"
+                                   alt="basket_white"></a></li>
+{% endblock %}
 {% block content %}
 
     <div id="da-slider" class="da-slider">
         <div class="da-slide">
             <h2>Tianshi on-line</h2>
 
-            <p>On-Line Интернет магазин <br> мы вам очень рады</p>
+            <p>On-Line Интернет магазин</p>
             <a href="/shop/products" class="da-link">Продукция</a>
 
             <div class="da-img"><img src="{{ STATIC_URL }}js/ParallaxContentSlider/ParallaxContentSlider/images/1.png"
@@ -40,7 +44,7 @@
 
             <a href="/why" class="da-link">Подробнее</a>
 
-            <div class="da-img"><img src="{{ STATIC_URL }}img/base/multy_saver1.jpg" alt="image01"/></div>
+            <div class="da-img"><img src="{{ STATIC_URL }}img/base/multy_saver1.jpg" alt="saver1"/></div>
         </div>
         <div class="da-slide">
             <h2>Эволюция</h2>
@@ -48,7 +52,7 @@
             <p style="color: #00ba08;">Сильный, быстрый, безопасный, ну просто замечательный препарат, без побочных эффектов.</p>
             <a href="#" class="da-link">Подробнее</a>
 
-            <div class="da-img"><img src="{{ STATIC_URL }}img/base/wow.png" alt="image01"/></div>
+            <div class="da-img"><img src="{{ STATIC_URL }}img/base/wow.png" alt="wow"/></div>
         </div>
         <div class="da-slide">
             <h2>Очень просто</h2>
@@ -56,41 +60,7 @@
             <p style="color: red;">Пищевая добавка, возвращающая к жизни!.</p>
             <a href="#" class="da-link">Перейти</a>
 
-            <div class="da-img"><img src="{{ STATIC_URL }}img/base/happy.jpg" alt="image01"/></div>
+            <div class="da-img"><img src="{{ STATIC_URL }}img/base/original.jpg" alt="happy"/></div>
         </div>
-        <!--<nav class="da-arrows">-->
-        <!--<span class="da-arrows-prev"></span>-->
-        <!--<span class="da-arrows-next"></span>-->
-        <!--</nav>-->
     </div>
-    <!--<section id="content">-->
-    <!--<div class="mp-slider">-->
-    <!--<ul class="mp-items" >-->
-    <!--<li style="display: none; ">-->
-    <!--<img src="{{ STATIC_URL }}img/base/multy_saver.gif"  alt="">-->
-    <!--</li>-->
-    <!--<li style="display: none; ">-->
-    <!--<img src="{{ STATIC_URL }}img/base/tree.jpg"  alt="tree">-->
-    <!--<div class="mp-banner" style="color: #DE0202;">-->
-    <!--<strong >БАД</strong>-->
-    <!--<span>БАДы корпорации “Тяньши”</span>-->
-    <!--<a href="http://livedemo00.template-help.com/wt_40504/more.html" class="slider-button">Подробнее</a>-->
-    <!--</div>-->
-    <!--</li>-->
-    <!--<li style="display: none; ">-->
-    <!--<img src="{{ STATIC_URL }}img/base/happy.jpg"  alt="happy">-->
-    <!--<div class="mp-banner" style="color: #23B000;">-->
-    <!--<strong>Мы поможем</strong>-->
-    <!--<span>  восстановить  сохранить <br> преумножить <br> Ваше здоровье</span>-->
-    <!--<a href="http://livedemo00.template-help.com/wt_40504/more.html" class="slider-button">Подробнее</a>-->
-    <!--</div>-->
-    <!--</li>-->
-    <!--</ul>-->
-    <!--<div class="pic">-->
-    <!--<div class="mp-banner"></div>-->
-    <!--</div>-->
-
-
-    <!--</div>-->
-    <!--</section>-->
 {% endblock %}

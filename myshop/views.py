@@ -1,13 +1,23 @@
 from django.template import Context, loader, RequestContext
 from django.shortcuts import render_to_response
 from shop.models import *
-from django.http import HttpResponse
+from django.http import HttpResponse, HttpResponseRedirect
 from django.utils import timezone
 from django.core.mail import send_mail, mail_admins
+from  shop.shop_api import get_order_from_request
+
+def order_insert(request):
+    order = get_order_from_request(request)
+
+    c = Context({
+        'name': order,
+        })
+    return  render_to_response('test.html',c,context_instance=RequestContext(request))
 
 def order_form(request):
     return render_to_response('shop/order_form.html',
         context_instance=RequestContext(request))
+
 
 def user_check(request):
     return render_to_response('shop/order_commited.html',{
@@ -42,7 +52,6 @@ def insert_to_db(request):
    # return HttpResponse(t.render(c))
     return render_to_response('shop/order_commited.html',c,
     context_instance=RequestContext(request))
-
 
 def production_show(request):
     products_list = Bads.objects.all()

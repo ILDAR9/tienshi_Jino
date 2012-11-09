@@ -6,4 +6,3 @@ urlpatterns = patterns('shop.views',
     url(r'^user_check$', 'user_check'),
     url(r'^order_form$', 'order_form'),#direct_to_template, {'template': 'shop/order_form.html', }),
     url(r'^bads$', direct_to_template, {'template': 'myshop/products.html', }),),
-)

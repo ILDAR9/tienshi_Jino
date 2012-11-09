@@ -1,5 +1,6 @@
 from django.db import models
 from shop.models import Product
+from django.utils.datetime_safe import datetime
 # class Order(models.Model):
 #     BY_CACH = 1;
 #     MY_WEB_MONEY = 2;
@@ -15,10 +16,17 @@ from shop.models import Product
 #         return self.full_name
 
 class Bads(Product):
-    title = models.CharField(max_length=60)
+    type = models.IntegerField()
+    package_amount = models.CharField(max_length=30)
     cover_picture = models.ImageField(upload_to='img/bads')
-    description = models.CharField(max_length=200)
-    def __unicode__(self):
-        return self.title
+#    short_description = models.TextField()
+    description = models.TextField()
+    svoystva = models.TextField()
+    sostav = models.TextField()
+    sposob_primenenya = models.TextField()
+    pokazanya = models.TextField()
+    protivopokozanya = models.TextField()
+
     class Meta:
-        ordering = ['title']
+        pass
+

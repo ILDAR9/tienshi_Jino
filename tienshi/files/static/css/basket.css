@@ -1,0 +1,112 @@
+.basket_item {
+
+    z-index: 110;
+    margin: 0px;
+    width: 400px;
+}
+
+.basket_item li {
+    width: auto;
+    border-top: 1px solid #eeeeee;
+    padding: 10px 15px;
+}
+
+.basket_item li:first-child {
+    border-top: none;
+}
+
+.basket_item .image_container {
+    min-height: 70px;
+}
+
+.basket_item .image_container img {
+    max-height: 70px;
+}
+
+.basket_item .image_container a {
+    padding: 0;
+}
+
+.basket_item .form-actions {
+    -webkit-border-radius: 0 0px 6px 6px;
+    -moz-border-radius: 0 0px 6px 6px;
+    border-radius: 0 0px 6px 6px;
+    margin: 0px;
+}
+
+.basket_item .form-actions p {
+    *zoom: 1;
+}
+
+.basket_item .form-actions p:before, .basket_item .form-actions p:after {
+    display: table;
+    content: "";
+    line-height: 0;
+}
+
+.basket_item .form-actions p:after {
+    clear: both;
+}
+
+.basket_item .form-actions p .btn {
+    float: right;
+}
+
+.basket_item .form-actions h4 {
+    text-align: right;
+    margin-bottom: 14px;
+}
+
+.basket_item .form-actions h4 small {
+    display: block;
+}
+
+.basket_item a {
+    color: #0088cc;
+    font-weight: inherit;
+    white-space: normal;
+}
+
+.basket_item a.btn {
+    color: #fff;
+}
+
+.basket_item h4 {
+    font-size: 14px;
+    margin: 0;
+}
+
+.basket_item h4 a {
+    padding: 0px;
+}
+
+.price_bask_color {
+    float: right;
+    margin-right: 5px;
+    font-size: 11px;
+    color: #46A546;
+    font-weight: bold;
+}
+.total_bask_color{
+    font-size: 15px;
+    color: #46A546;
+}
+
+.thumbnail {
+    height: 175px;
+    width: 235px;
+    display: block;
+    padding: 4px;
+    line-height: 20px;
+    border: 1px solid #DDD;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.055);
+    -moz-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.055);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.055);
+    -webkit-transition: all 0.2s ease-in-out;
+    -moz-transition: all 0.2s ease-in-out;
+    -o-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+}

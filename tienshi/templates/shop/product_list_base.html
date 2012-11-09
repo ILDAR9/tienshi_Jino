@@ -1,0 +1,151 @@
+{% extends "shop/base.html" %}
+
+{% block body %}
+    <style type="text/css">
+
+    </style>
+    <div>
+        <h1 style="text-align: center;">Продукция Тяньши:</h1>
+
+        <ul id="myTab" class="nav nav-tabs">
+            <li class=""><a href="#bads" data-toggle="tab">Бады</a></li>
+            <li class=""><a href="#beauty" data-toggle="tab">Красота</a></li>
+            <li class=""><a href="#devices" data-toggle="tab">Приборы</a></li>
+            <li class=""><a href="#house_chem" data-toggle="tab">Бытовая химия</a></li>
+        </ul>
+        <div id="myTabContent" class="tab-content">
+
+            <div class="tab-pane fade" id="bads">
+                {% for object in object_list %}
+
+                    {% if object.type == 1 %}
+                        <div class="span3 well">
+                            <div class="image_container">
+                                <a href="{% url product_detail object.slug %}">
+                                    <img src="{{ MEDIA_URL }}{{ object.cover_picture }}" alt="Фото"
+                                         class="thumbnail">
+                                </a>
+                            </div>
+                            <br>
+
+                            <h2><a href="{% url product_detail object.slug %}">{{ object.get_name }}</a><br></h2>
+                            <center class="price_color">{{ object.unit_price }}</center><br>
+
+                            <center >
+                                {% if object.active %}
+                                    <div style="color: #46A546;"><i class="icon-ok"></i>$ Имеются в продаже</div>
+                                    <br>
+                                    <img src="{{ STATIC_URL }}img/base/basket_button.png" alt="">
+                                {% else %}
+                                    <div style="color: #9D261D;"><i class="icon-remove"></i>$ Нет в наличии</div>
+                                {% endif %}
+                            </center>
+                        </div>
+                    {% endif %}
+
+                {% endfor %}
+            </div>
+            <div class="tab-pane fade active in" id="beauty">
+
+                <table class="table table-bordered">
+                    <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Продукт</th>
+                        <th>Короткое описание</th>
+                        <th>Цена</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% for object in object_list %}
+                        {% if object.active %}
+                            {% if object.type == 2 %}
+                                <tr>
+                                    <td rowspan="2">{{ forloop.counter }}</td>
+                                    <td colspan="2" style="text-align: center"><a
+                                            href="{% url product_detail object.slug %}">{{ object.get_name }}</a>
+                                    </td>
+                                    <td rowspan="2">{{ object.unit_price }}</td>
+                                </tr>
+                                <tr>
+                                    <td><img src="{{ MEDIA_URL }}{{ object.cover_picture }}" alt="Фото"
+                                             class="span2">
+                                    </td>
+                                    <td>{{ object.short_description }}</td>
+                                </tr>
+                            {% endif %}
+                        {% endif %}
+                    {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+            <div class="tab-pane fade" id="devices">
+                <table class="table table-bordered">
+                    <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Продукт</th>
+                        <th>Короткое описание</th>
+                        <th>Цена</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% for object in object_list %}
+                        {% if object.active %}
+                            {% if object.type == 3 %}
+                                <tr>
+                                    <td rowspan="2">{{ forloop.counter }}</td>
+                                    <td colspan="2" style="text-align: center"><a
+                                            href="{% url product_detail object.slug %}">{{ object.get_name }}</a>
+                                    </td>
+                                    <td rowspan="2">{{ object.unit_price }}</td>
+                                </tr>
+                                <tr>
+                                    <td><img src="{{ MEDIA_URL }}{{ object.cover_picture }}" alt="Фото"
+                                             class="span2">
+                                    </td>
+                                    <td>{{ object.short_description }}</td>
+                                </tr>
+                            {% endif %}
+                        {% endif %}
+                    {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+            <div class="tab-pane fade" id="house_chem">
+                <table class="table table-bordered">
+                    <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Продукт</th>
+                        <th>Короткое описание</th>
+                        <th>Цена</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% for object in object_list %}
+                        {% if object.active %}
+                            {% if object.type == 4 %}
+                                <tr>
+                                    <td rowspan="2">{{ forloop.counter }}</td>
+                                    <td colspan="2" style="text-align: center"><a
+                                            href="{% url product_detail object.slug %}">{{ object.get_name }}</a>
+                                    </td>
+                                    <td rowspan="2">{{ object.unit_price }}</td>
+                                </tr>
+                                <tr>
+                                    <td><img src="{{ MEDIA_URL }}{{ object.cover_picture }}" alt="Фото"
+                                             class="span2">
+                                    </td>
+                                    <td>{{ object.short_description }}</td>
+                                </tr>
+                            {% endif %}
+                        {% endif %}
+                    {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

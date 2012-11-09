@@ -1,0 +1,184 @@
+{% extends "shop/base.html" %}
+{% block body %}
+    <style type="text/css">
+        h2 {
+            height: 70px;
+        }
+    </style>
+    <div>
+        <h1 style="text-align: center;">Продукция Тяньши:</h1>
+
+        <ul id="myTab" class="nav nav-tabs">
+            <li class="active"><a href="#bads" data-toggle="tab">Бады</a></li>
+            <li class=""><a href="#beauty" data-toggle="tab">Красота</a></li>
+            <li class=""><a href="#devices" data-toggle="tab">Приборы</a></li>
+            <li class=""><a href="#house_chem" data-toggle="tab">Бытовая химия</a></li>
+        </ul>
+        <div id="myTabContent" class="tab-content">
+
+            <div class="tab-pane active" id="bads">
+                {% for object in object_list %}
+
+                    {% if object.type == 1 %}
+                        <div class="span3 well det">
+                            <div class="image_container">
+                                <a href="{% url product_detail object.slug %}">
+                                    <img src="{{ MEDIA_URL }}{{ object.cover_picture }}" alt="Фото"
+                                         class="thumbnail">
+                                </a>
+                            </div>
+
+                            <h2><a href="{% url product_detail object.slug %}">{{ object.get_name }}</a></h2>
+                            <br>
+                            <center class="price_color">$ {{ object.unit_price }}</center>
+
+                            <center>
+                                {% if object.active %}
+                                    <div style="color: #46A546;"><i class="icon-ok"></i>Имеются в продаже</div>
+                                    <form method="post" action="{% url cart %}">{% csrf_token %}
+                                        <input type="hidden" name="add_item_id" value="{{object.id}}">
+
+                                        <div class="row">
+                                            Колличество:
+                                            <input class="span1"
+                                                   onkeypress="if(event.keyCode<48 || event.keyCode > 57)event.returnValue=false"
+                                                   type="text" name="add_item_quantity" value="1">
+                                        </div>
+                                        <input type="submit"
+                                               style="width: 55px; background-image: url('{{ STATIC_URL }}img/base/basket_button.png')"
+                                               value="">
+                                    </form>
+                                {% else %}
+                                    <div style="color: #9D261D;"><i class="icon-remove"></i>Нет в наличии</div>
+                                {% endif %}
+                            </center>
+
+                        </div>
+                    {% endif %}
+                {% endfor %}
+            </div>
+            <div class="tab-pane fade" id="beauty">
+                {% for object in object_list %}
+                    {% if object.type == 2 %}
+                        <div class="span3 well det">
+                            <div class="image_container">
+                                <a href="{% url product_detail object.slug %}">
+                                    <img src="{{ MEDIA_URL }}{{ object.cover_picture }}" alt="Фото"
+                                         class="thumbnail">
+                                </a>
+                            </div>
+
+                            <h2><a href="{% url product_detail object.slug %}">{{ object.get_name }}</a></h2>
+                            <br>
+                            <center class="price_color">$ {{ object.unit_price }}</center>
+
+
+                            <center>
+                                {% if object.active %}
+                                    <div style="color: #46A546;"><i class="icon-ok"></i>Имеются в продаже</div>
+                                    <form method="post" action="{% url cart %}">{% csrf_token %}
+                                        <input type="hidden" name="add_item_id" value="{{object.id}}">
+
+                                        <div class="row">
+                                            Колличество:
+                                            <input class="span1"
+                                                   onkeypress="if(event.keyCode<48 || event.keyCode > 57)event.returnValue=false"
+                                                   type="text" name="add_item_quantity" value="1">
+                                        </div>
+                                        <input type="submit"
+                                               style="width: 55px; background-image: url('{{ STATIC_URL }}img/base/basket_button.png')"
+                                               value="">
+                                    </form>
+                                {% else %}
+                                    <div style="color: #9D261D;"><i class="icon-remove"></i>Нет в наличии</div>
+                                {% endif %}
+                            </center>
+                        </div>
+                    {% endif %}
+                {% endfor %}
+            </div>
+            <div class="tab-pane fade" id="devices">
+                {% for object in object_list %}
+                    {% if object.type == 3 %}
+                        <div class="span3 well det">
+                            <div class="image_container">
+                                <a href="{% url product_detail object.slug %}">
+                                    <img src="{{ MEDIA_URL }}{{ object.cover_picture }}" alt="Фото"
+                                         class="thumbnail">
+                                </a>
+                            </div>
+
+                            <h2><a href="{% url product_detail object.slug %}">{{ object.get_name }}</a></h2>
+                            <br>
+                            <center class="price_color">$ {{ object.unit_price }}</center>
+
+
+                            <center>
+                                {% if object.active %}
+                                    <div style="color: #46A546;"><i class="icon-ok"></i>Имеются в продаже</div>
+                                    <form method="post" action="{% url cart %}">{% csrf_token %}
+                                        <input type="hidden" name="add_item_id" value="{{object.id}}">
+
+                                        <div class="row">
+                                            Колличество:
+                                            <input class="span1"
+                                                   onkeypress="if(event.keyCode<48 || event.keyCode > 57)event.returnValue=false"
+                                                   type="text" name="add_item_quantity" value="1">
+                                        </div>
+                                        <input type="submit"
+                                               style="width: 55px; background-image: url('{{ STATIC_URL }}img/base/basket_button.png')"
+                                               value="">
+                                    </form>
+                                {% else %}
+                                    <div style="color: #9D261D;"><i class="icon-remove"></i>Нет в наличии</div>
+                                {% endif %}
+                            </center>
+                        </div>
+                    {% endif %}
+                {% endfor %}
+            </div>
+            <div class="tab-pane fade" id="house_chem">
+                {% for object in object_list %}
+                    {% if object.type == 4 %}
+                        <div class="span3 well det">
+                            <div class="image_container">
+                                <a href="{% url product_detail object.slug %}">
+                                    <img src="{{ MEDIA_URL }}{{ object.cover_picture }}" alt="Фото"
+                                         class="thumbnail">
+                                </a>
+                            </div>
+
+                            <h2><a href="{% url product_detail object.slug %}">{{ object.get_name }}</a></h2>
+                            <br>
+                            <center class="price_color">$ {{ object.unit_price }}</center>
+
+
+                            <center>
+                                {% if object.active %}
+                                    <div style="color: #46A546;"><i class="icon-ok"></i>Имеются в продаже</div>
+                                    <form method="post" action="{% url cart %}">{% csrf_token %}
+                                        <input type="hidden" name="add_item_id" value="{{object.id}}">
+
+                                        <div class="row">
+                                            Колличество:
+                                            <input class="span1"
+                                                   onkeypress="if(event.keyCode<48 || event.keyCode > 57)event.returnValue=false"
+                                                   type="text" name="add_item_quantity" value="1">
+                                        </div>
+                                        <input type="submit"
+                                               style="width: 55px; background-image: url('{{ STATIC_URL }}img/base/basket_button.png')"
+                                               value="">
+                                    </form>
+                                {% else %}
+                                    <div style="color: #9D261D;"><i class="icon-remove"></i>Нет в наличии</div>
+                                {% endif %}
+                            </center>
+                        </div>
+                    {% endif %}
+                {% endfor %}
+            </div>
+
+        </div>
+    </div>
+
+{% endblock %}

@@ -19,6 +19,12 @@
             height: 100px;
             width: 100px;
         }
+
+        .note {
+            font-size: 10px;
+            width: 50%;
+            font-family: Arial, Helvetica, sans-serif;
+        }
     </style>
     {% block style_addon %}
     {% endblock %}
@@ -42,7 +48,7 @@
 <!--=====================================
                 Top Fixed Navigation Menu BEGIN
         ======================================-->
-<div id="menu_div span10">
+<div id="menu_div">
     <div id="navigation">
         <div id="menu">
             <ul id="nav">
@@ -59,24 +65,30 @@
 
                                 <li><a href="/"><img src="{{ STATIC_URL }}img/Home_files/pro_home.png" alt=""></a>
                                 </li>
-                                <li>
-                                    <a href="http://livedemo00.template-help.com/wt_40504/404.html">Pages<span></span></a>
-                                    <ul style="display: none; ">
-                                        <li>
-                                            <a href="http://livedemo00.template-help.com/wt_40504/under_construction.html">Under
-                                                Construction</a></li>
-                                        <li><a href="http://livedemo00.template-help.com/wt_40504/intro.html">Intro
-                                            Page</a></li>
-                                        <li><a href="http://livedemo00.template-help.com/wt_40504/404.html">404 page</a>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li><a href="/shop/products">Продукция</a></li>
+
+                                <li><a href="/shop/products">Каталог продукции</a></li>
                                 <li><a href="/shop/cart">Сделать заказ</a></li>
                                 <li><a data-toggle="modal" href="#myModal">Контактные данные</a></li>
+                                {% block btn_group %}
+                                <div class="btn-group offset8">
+
+                                    <a href="/shop/cart/"><img src="{{ STATIC_URL }}img/base/basket_white.png"
+                                                               alt="basket_white"></a>
+                                    <button class="btn dropdown-toggle" data-toggle="dropdown">
+                                        <span class="caret"></span>
+                                    </button>
+                                    <div class="dropdown-menu pull-right basket_item">
+                                        <link rel="stylesheet" href="{{ STATIC_URL }}css/basket.css">
+                                        {% load shop_tags %}
+                                        {% cart %}
+
+
+                                    </div>
+
+                                </div>
+                                {% endblock %}
 
                             </ul>
-                            <div class="pro_clear"></div>
                         </div>
                     </div>
 
@@ -93,7 +105,7 @@
         /Top Fixed Navigation Menu END
 ======================================-->
 
-<div class="container ">
+<div class="container " id="top_page">
     <div class="header" style="margin-top: 60px;">
         <!-- Header -->
         <header>
@@ -104,17 +116,24 @@
                         <li class="current"><a href="{{ STATIC_URL }}img/Home_files/Home.htm">home</a></li>
                         <li><a href="/why">Почему Тяньши</a></li>
                         <li><a href="/vopros-otvet">Вопросы-ответы</a></li>
-                        <li><a data-toggle="modal" href="#myModal">Контактные данные</a></li>
+                        <li><a data-toggle="modal" href="/about">О компании</a></li>
                     </ul>
                 </nav>
                 <div class="clear"></div>
             </div>
         </header>
-        <!-- Content -->
-        {% block content %}
 
-        {% endblock %}
     </div>
+    <!-- Content -->
+    {% block content %}
+        <br><br><br>
+        <div class="well">
+            {% block content_well %}
+            {% endblock %}
+            <a href="#top_page" ><i class="icon-chevron-up hidden-phone"></i> Вверх</a>
+        </div>
+
+    {% endblock %}
 
     <!-- Footer -->
     {% block footer %}
@@ -127,12 +146,12 @@
                 <div class="row-fluid">
                     <article class="offset1 span3" style="float: left;">
                         <h4>Для тех кто хочет <br>зарабатывать</h4>
-                        © 2012 | <a href="http://bestwork.com//" style="color: #006dcc;">Сюда</a>
+                        © 2012 | <a href="/make-money" style="color: #006dcc;">Сюда</a>
                     </article>
 
                     <article class="span3">
                         <h4>Для тех кто думает как приумножить деньги</h4>
-                        © 2012 | <a href="http://bestinvestments.com/" style="color: #006dcc;">Сюда</a>
+                        © 2012 | <a href="#" style="color: #006dcc;">Сюда</a>
                     </article>
 
                     <article class=" span3" style="margin-right: 40px;">
@@ -148,6 +167,10 @@
                                     src="{{ STATIC_URL }}img/base/vk-logo.bmp" alt=""></a></li>
                         </ul>
                     </article>
+                    <div class="offset1 span7 note">Материалы сайта частично взяты с
+                        официального сайта <a href="http://ru.tiens.com/" target="_blank"
+                                              rel="nofollow">ru.tiens.com</a>.
+                    </div>
                 </div>
             </div>
         </footer>
@@ -157,33 +180,36 @@
 <!-- Contacts -->
 <div id="myModal" class="modal hide fade span12"
      style="z-index:2000; color: #f1f1f1; background-image: url('{{ STATIC_URL }}img/base/contact_bk.jpg'); ">
-<div class="modal-header">
-    <button type="button" class="close" data-dismiss="modal">×</button>
-    <h3>Контактные данные</h3>
-</div>
-<div class="modal-body">
-    <div class="span12">
-        <div class="pull-left">
-            <h2>Телефон</h2>
-
-            <p>8 (917) <b>234-66-22</b><br> 8 (917) <b>123-33-44</b></p>
-        </div>
-        <div class="offset3">
-            <h2>Адресс</h2>
-
-            <p>г.Альметьевск, <br>ул. Зифы Балакиной, д.1в</p>
-        </div>
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">×</button>
+        <h3>Контактные данные</h3>
     </div>
-    <br>
+    <div class="modal-body">
+        <div class="span12">
+            <div class="pull-left">
+                <h2>Телефон</h2>
 
-    <p><span style="padding: 0px 10px;">&nbsp;</span>бла бла</p>
-    <img src="{{ STATIC_URL }}img/base/tianshi_logo.gif" alt="Центр города">
-    <a href="http://maps.yandex.ru/?um=&ll=49.100132%2C55.791075&spn=0.016286%2C0.005398&z=17&l=map"><u style="color: #004ab3;">Карта</u></a>
+                <p>8 (917) <b>234-66-22</b><br> 8 (917) <b>123-33-44</b></p>
+            </div>
+            <div class="offset3">
+                <h2>Адресс</h2>
 
-</div>
-<div class="modal-footer">
-    <a href="#" class="btn" data-dismiss="modal">Закрыть</a>
-</div>
+                <p>г.Казань, ул. Саид-Галеева<br>, д.6, 5 этаж, офис 514</p>
+            </div>
+        </div>
+        <br>
+
+        <p><span style="padding: 0px 10px;">&nbsp;</span>бла бла</p>
+        <img src="{{ STATIC_URL }}img/base/tianshi_logo.gif" alt="Центр города">
+        <a href="http://maps.yandex.ru/?um=&ll=49.100132%2C55.791075&spn=0.016286%2C0.005398&z=17&l=map"><u
+                style="color: #004ab3;">Карта</u></a>
+
+    </div>
+
+    <div class="modal-footer">
+        <br>
+        <a href="#" class="btn" data-dismiss="modal">Закрыть</a>
+    </div>
 </div>
 
 
